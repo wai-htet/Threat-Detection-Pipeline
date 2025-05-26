@@ -1,0 +1,3 @@
+2025-05-26 12:00:01 INFO User login succeeded for user: alice
+2025-05-26 12:05:43 WARN Failed login attempt for user: bob
+2025-05-26 12:07:15 ERROR Multiple failed login attempts detected from IP: 192.168.1.50
