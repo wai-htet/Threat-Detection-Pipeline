@@ -59,34 +59,22 @@ def respond_to_alert(ip):
     log_incident(ip)
     notify(ip)
 
-
+```
  🔭 Enterprise Scalability
-
-    Deploy with Kubernetes
-
-    Integrate with tools like TheHive, MISP, or Shuffle
-
-    Extend to cloud-native logging via Beats agents
-
-    Map alerts to MITRE ATT&CK
+    - Deploy with Kubernetes
+    - Integrate with tools like TheHive, MISP, or Shuffle
+    - Extend to cloud-native logging via Beats agents
+    -Map alerts to MITRE ATT&CK
 
 This proof-of-concept can be scaled into an enterprise-grade solution by:
-
-    Multi-node Elasticsearch cluster for high availability
-
-    Load balancing Filebeat agents across endpoints
-
-    Integration with production-grade SOAR platforms like TheHive, Shuffle, Cortex XSOAR
-
-    Use of SIEM pipelines (Logstash, Kafka) for large-scale ingestion
-
-    Custom detection engineering using Elastic Common Schema (ECS)
-
-    Alert enrichment and correlation with threat intelligence feeds
-
-    Authentication and RBAC for Kibana and Elasticsearch
-
-    Cloud-native deployment with Kubernetes and persistent storage
+  -Multi-node Elasticsearch cluster for high availability
+   -Load balancing Filebeat agents across endpoints
+  -Integration with production-grade SOAR platforms like TheHive, Shuffle, Cortex XSOAR
+  - Use of SIEM pipelines (Logstash, Kafka) for large-scale ingestion
+   - Custom detection engineering using Elastic Common Schema (ECS)
+    - Alert enrichment and correlation with threat intelligence feeds
+   - Authentication and RBAC for Kibana and Elasticsearch
+  - Cloud-native deployment with Kubernetes and persistent storage
 
 ⚙️ Setup Instructions
 
@@ -115,23 +103,17 @@ Threat-Detection-Pipeline/
 
 📊 Sample Use Case
 
-    Log failed SSH logins → Detect brute-force attempts → Trigger Python SOAR script → Block source IP using iptables or send alert via Slack/email.
+  Log failed SSH logins → Detect brute-force attempts → Trigger Python SOAR script → Block source IP using iptables or send alert via Slack/email.
 
 💡 Future Enhancements
-
     ✅ Correlation engine for multi-step attack detection
-
     ✅ MITRE ATT&CK mapping
-
     ✅ REST API endpoints for external integrations
-
     ✅ Web UI for managing detection rules & playbooks
-
     ✅ Container orchestration via Kubernetes
 
 📎 References
-
-    Elastic SIEM Docs
+   Elastic SIEM Docs
     MITRE ATT&CK
     SOAR Open Source
 
