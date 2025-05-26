@@ -1,6 +1,8 @@
 🛡️ End-to-End Threat Detection Pipeline (SIEM + SOAR Integration)
 
 A modular, containerized cybersecurity pipeline that simulates real-time threat detection, centralized logging (SIEM), and automated incident response (SOAR). Built for scalability, automation, and real-world detection engineering.
+
+
 🚀 Overview
 
 This project demonstrates a full-stack cybersecurity pipeline using:
