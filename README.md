@@ -1,22 +1,18 @@
-🛡️ End-to-End Threat Detection Pipeline (SIEM + SOAR Integration)
+# 🚨 End-to-End Threat Detection Pipeline (SIEM + SOAR Integration)
 
-A modular, containerized cybersecurity pipeline that simulates real-time threat detection, centralized logging (SIEM), and automated incident response (SOAR). Built for scalability, automation, and real-world detection engineering.
+This project simulates a real-world **enterprise-grade security monitoring and response pipeline** using open-source tools. It combines **SIEM (Kibana + Elasticsearch + Filebeat)** and a **custom SOAR automation script** to detect and respond to security threats.
 
+---
 
-🚀 Overview
+## 🧠 Project Highlights
 
-This project demonstrates a full-stack cybersecurity pipeline using:
+- **Log Ingestion** via Filebeat from system logs and dummy datasets
+- **Centralized Search and Analysis** with Elasticsearch
+- **Interactive Dashboards & Detection Rules** via Kibana
+- **Custom Python-based SOAR** for automated blocking and alerting
+- **Realistic Simulation** of SSH brute force, data exfiltration, geolocation anomalies, and more
 
-    Log Shippers (Filebeat)
-
-    Ingestion & Search Engine (Elasticsearch)
-
-    Visualization & SIEM (Kibana)
-
-    Automation & Response (SOAR logic in Python)
-
-    Sample Threat Simulations (e.g., failed SSH, malicious DNS queries)
-
+---
 It enables real-time ingestion of logs, detection of suspicious behaviors, and automated or semi-automated response actions.
 📦 Architecture
 
@@ -24,28 +20,55 @@ It enables real-time ingestion of logs, detection of suspicious behaviors, and a
                                   ↘
                                [ SOAR (Python script or Playbook) ]
 
+## 📊 Dashboards Built (Kibana)
+
+1. **Abnormal Login Times**
+   - Simulates logins outside working hours using ecommerce timestamps
+   - Visualizes anomalies grouped by user role (e.g. gender as metaphor)
+
+2. **Suspicious User Behavior**
+   - Detects repeated access to same resources (simulating brute force or enumeration)
+
+3. **Geolocation Mapping**
+   - Shows login attempts from unexpected global regions
+
+4. **High-Value Activity (Data Exfiltration)**
+   - Tracks access to "sensitive" items (mapped from product data)
+
+📷 Screenshots available in the `screenshots/` folder.
+
+
 🧰 Tech Stack
-Component	Tool
-Log Shipper	Filebeat
-SIEM Engine	Elasticsearch
-Visualization	Kibana
-SOAR	Custom Python
-Containerization	Docker + Docker Compose
-🛠️ Features
 
-    ✅ Dockerized architecture — portable and scalable
+- **Filebeat** – log shipper
+- **Elasticsearch** – search & storage
+- **Kibana** – dashboards and detection rules
+- **Python (SOAR script)** – incident response automation
+- **Docker** – container orchestration for quick setup
 
-    ✅ Real-time log ingestion from multiple sources
+## 🔁 Automation Script
 
-    ✅ Custom detection rules and dashboards in Kibana
+A Python script automates incident response:
+- Blocks suspicious IPs using `iptables`
+- Logs incidents to CSV
+- Sends Slack notifications
 
-    ✅ Automated incident response via Python-based SOAR
+```python
+def respond_to_alert(ip):
+    block_ip(ip)
+    log_incident(ip)
+    notify(ip)
 
-    ✅ Simulated attack data (failed login, DDoS, DNS tunneling)
 
-    ✅ Easily extendable with new rules, agents, or integrations
+ 🔭 Enterprise Scalability
 
-📈 Enterprise Scalability
+    Deploy with Kubernetes
+
+    Integrate with tools like TheHive, MISP, or Shuffle
+
+    Extend to cloud-native logging via Beats agents
+
+    Map alerts to MITRE ATT&CK
 
 This proof-of-concept can be scaled into an enterprise-grade solution by:
 
@@ -87,7 +110,7 @@ Threat-Detection-Pipeline/
 ├── soar/
 │   └── responder.py         # SOAR automation logic
 ├── logs/                    # Sample logs for ingestion
-├── dashboards/              # Optional: prebuilt Kibana dashboards
+├── dashboards/              # Kibana dashboards
 └── README.md
 
 📊 Sample Use Case
@@ -106,8 +129,14 @@ Threat-Detection-Pipeline/
 
     ✅ Container orchestration via Kubernetes
 
-    👨‍💻 Author
+📎 References
 
+    Elastic SIEM Docs
+    MITRE ATT&CK
+    SOAR Open Source
+
+
+ 👨‍💻 Author
 Wai Htet
 Security Engineer | Cyber Threat Detection | DevSecOps
 🔗 linkedin.com/in/htet-wai
